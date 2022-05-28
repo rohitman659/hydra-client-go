@@ -1,7 +1,7 @@
 /*
  * Ory Hydra API
  *
- * Documentation for all of Ory Hydra's APIs. 
+ * Documentation for all of Ory Hydra's APIs.
  *
  * API version: v1.11.8
  * Contact: hi@ory.sh
@@ -14,6 +14,7 @@ package client
 import (
 	"bytes"
 	"context"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -3068,6 +3069,7 @@ func (a *AdminApiService) IntrospectOAuth2TokenExecute(r AdminApiApiIntrospectOA
 		localVarReturnValue  *OAuth2TokenIntrospection
 	)
 
+	fmt.Println("logging here")
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdminApiService.IntrospectOAuth2Token")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
