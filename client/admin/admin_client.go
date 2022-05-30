@@ -798,6 +798,8 @@ func (a *Client) IntrospectOAuth2Token(params *IntrospectOAuth2TokenParams) (*In
 	if err != nil {
 		return nil, err
 	}
+
+	log.Println(result)
 	success, ok := result.(*IntrospectOAuth2TokenOK)
 	if ok {
 		return success, nil
