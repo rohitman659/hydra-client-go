@@ -7,6 +7,7 @@ package admin
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
@@ -781,6 +782,7 @@ func (a *Client) IntrospectOAuth2Token(params *IntrospectOAuth2TokenParams) (*In
 		params = NewIntrospectOAuth2TokenParams()
 	}
 
+	log.Println("here")
 	result, err := a.transport.Submit(&runtime.ClientOperation{
 		ID:                 "introspectOAuth2Token",
 		Method:             "POST",
